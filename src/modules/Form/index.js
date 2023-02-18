@@ -1,27 +1,34 @@
 import { useState } from "react";
-import { useUser } from "../../hooks/useUser";
+import "./styles.css";
 
 const Form = ({ setUserData }) => {
   const [userValue, setUserValue] = useState("");
-  const { user } = useUser(userValue);
+
+  const onHandleUser = (e) => {
+    e.preventDefault();
+    setUserValue(e.target.value);
+  };
 
   const onSubmitUser = (e) => {
     e.preventDefault();
-    // console.log(e.target[0].value);
-    setUserValue(e.target[0].value);
+    setUserData(userValue);
   };
 
-  setUserData(user);
-
   return (
-    <>
-      <h1>Get GitHub Profile</h1>
+    <div>
       <form onSubmit={onSubmitUser}>
-        <label>Username:</label>
-        <input type="text" name="username" />
-        <button type="submit">Search</button>
+        <label className="label">Username:</label>
+        <input
+          onChange={onHandleUser}
+          className="input"
+          type="text"
+          name="username"
+        />
+        <button className="button" type="submit">
+          Search
+        </button>
       </form>
-    </>
+    </div>
   );
 };
 

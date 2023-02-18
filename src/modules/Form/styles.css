@@ -1,0 +1,18 @@
+.label,
+.button {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.button {
+  background-color: #0084ff;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
