@@ -31,13 +31,18 @@ const ProfileCard = ({ user, isLoading }) => {
 
   return (
     <div className="card profile">
-      <img className="profile-img" src={user.avatar_url} alt="profile-pic" />
+      <img
+        loading="lazy"
+        className="profile-img"
+        src={user.avatar_url}
+        alt="profile-pic"
+      />
       <div className="profile-desc">
         <h3>{user.name}</h3>
         <span>{user.login}</span>
         <span>{user.location}</span>
         <span>{user.bio}</span>
-        <a className="profile-button" href={user.url}>
+        <a className="profile-button" href={user.html_url}>
           Go to GitHub Profile
         </a>
       </div>
