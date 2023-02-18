@@ -1,5 +1,13 @@
+import { Form } from "./modules/Form";
+import { ProfileCard } from "./modules/ProfileCard";
+
 function App() {
-  return <div>Hello World</div>;
+  return (
+    <>
+      <Form />
+      <ProfileCard />
+    </>
+  );
 }
 
 export default App;
