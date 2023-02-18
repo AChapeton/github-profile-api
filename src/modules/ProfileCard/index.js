@@ -1,16 +1,17 @@
-const ProfileCard = () => {
+const ProfileCard = ({ userData }) => {
+  if (userData.message === "Not Found") {
+    return <p>Start looking...</p>;
+  }
+
   return (
     <div>
-      <img
-        src="https://avatars.githubusercontent.com/u/29237868?v=4"
-        alt="profile-pic"
-      />
+      <img src={userData.avatar_url} alt="profile-pic" />
       <div>
-        <h3>Andres Chapeton</h3>
-        <p>AChapeton</p>
+        <h3>{userData.name}</h3>
+        <p>{userData.login}</p>
         <p>Antiguo Cuscatlan, El Salvador</p>
-        <p>Web Developer</p>
-        <a href="www.github.com">Go to GitHub Profile</a>
+        <p>{userData.bio}</p>
+        <a href={userData.url}>Go to GitHub Profile</a>
       </div>
     </div>
   );
